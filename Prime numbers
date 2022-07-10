@@ -1,0 +1,36 @@
+/*
+2 97
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 
+*/
+
+
+# include<iostream>
+#include<climits>
+using namespace std;
+void prime_no(int a,int b)
+{
+    int array[b+1]={0};
+    for(int p=2;p<b+1;p++)
+    {
+        if(array[p]==0)
+        {
+            for(int j=p*p;j<b+1;j+=p)
+            {
+                array[j]=p;
+            }
+        }
+    }
+    for(int p=a;p<b+1;p++)
+    {
+        if(array[p]==0)
+        {
+            cout<<p<<" ";
+        }
+    }
+}
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    prime_no(a,b);
+}
